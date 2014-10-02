@@ -17,24 +17,24 @@ public interface CustomerService {
 	 *  (
 	 *  @return Customer
 	 */
-	public Customer findCustomer(String CustomerID) throws DataNotFoundException;
+	public Customer findCustomer(String customerID) throws DataNotFoundException;
 	
 	/**
 	 *  회원정보를 수정하기 위한 메소드
 	 *  
 	 */
-	public void updateCustomer(Customer Customer) throws DataNotFoundException;
+	public void updateCustomer(Customer customer) throws DataNotFoundException;
 	
 	/**
 	 *  회원을 삭제하기 위한 메소드
 	 */
-	public void removeCustomer(Customer Customer) throws DataNotFoundException;
+	public void removeCustomer(String customerID) throws DataNotFoundException;
 	
 	/**
 	 *  회원의 로그인정보가 맞는지 확인하는 메소드
 	 *  로그인 정보가 맞다면 Customer 객체를 리턴한다.
 	 *  @return Customer
 	 */
-	public Customer loginCheck(String CustomerID, String password);
+	public Customer loginCheck(String customerID, String password);
 
 }

@@ -1,23 +1,41 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+<html>	
 <head>
-<meta charset="UTF-8">
-<title>School Web</title>
-<style>
-a {
-	font-size: x-large;
-	font-weight: bold;
-}
-</style>
+	<meta charset="UTF-8">
+	<title>HUIM Store</title>
+    <link rel="stylesheet" href="css/huim.css">
 </head>
 <body>
-	<h1>School System Web ver.</h1>
-	<p>
-		<a href="member?memberID=duke">회원정보 조회</a>
-	</p>
-	<p>
-		<a href="product?action=select&amp;productID=sams110">전체 회원 조회</a>
-	</p>
+ <div class="index" align="center">
+	<table>
+		<thead class="thead" align="center">
+			<tr class="top">
+				<td colspan="2"><img id="headerLogo" src="images/logo.png" alt="휴이엠 로고"></td>	
+			</tr>
+			<tr>
+				<td colspan="2" class="category"><c:import url ="/category.jsp" /></td>
+			</tr>
+		</thead>
+	    
+	    <tbody class="tbody" align="center">
+			<tr>
+				<td id = "banner"><c:import url="banner.jsp" /><br><br></td>
+				<td valign="top" align = "left"><c:import url="sidebar.jsp" /></td>
+			</tr>      
+			
+			<tr id = "centerList">
+				<td><c:import url="list.jsp" /></td>
+			</tr>  
+	    </tbody>
+		
+		<tfoot  class="tfoot" align="center">
+			<tr>
+                <td><c:import url="/WEB-INF/incl/copyright.jsp" /></td>
+            </tr>
+		</tfoot>
+    </table>
+</div>
 </body>
 </html>

@@ -3,51 +3,72 @@
   <display-name>Mall</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
-    <description></description>
     <display-name>CustomerServlet</display-name>
     <servlet-name>CustomerServlet</servlet-name>
-    <servlet-class>mall.Servlet.CustomerServlet</servlet-class>
+    <servlet-class>mall.controller.CustomerServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>CustomerServlet</servlet-name>
     <url-pattern>/customer</url-pattern>
   </servlet-mapping>
+
   <servlet>
-    <description></description>
     <display-name>ProductServlet</display-name>
     <servlet-name>ProductServlet</servlet-name>
-    <servlet-class>mall.Servlet.ProductServlet</servlet-class>
+    <servlet-class>mall.controller.ProductServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ProductServlet</servlet-name>
     <url-pattern>/product</url-pattern>
   </servlet-mapping>
+
   <servlet>
-    <description></description>
     <display-name>BasketServlet</display-name>
     <servlet-name>BasketServlet</servlet-name>
-    <servlet-class>mall.Servlet.BasketServlet</servlet-class>
+    <servlet-class>mall.controller.BasketServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BasketServlet</servlet-name>
     <url-pattern>/basket</url-pattern>
   </servlet-mapping>
+
   <servlet>
-    <description></description>
     <display-name>BoardServlet</display-name>
     <servlet-name>BoardServlet</servlet-name>
-    <servlet-class>mall.Servlet.BoardServlet</servlet-class>
+    <servlet-class>mall.controller.BoardServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BoardServlet</servlet-name>
     <url-pattern>/board</url-pattern>
   </servlet-mapping>
 
+  <filter>
+  	<display-name>EncodingFilter</display-name>
+  	<filter-name>EncodingFilter</filter-name>
+  	<filter-class>mall.filter.EncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  </filter>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<servlet-name>CustomerServlet</servlet-name>  	
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<servlet-name>ProductServlet</servlet-name>  	
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<servlet-name>BasketServlet</servlet-name>  	
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>EncodingFilter</filter-name>
+  	<servlet-name>BoardServlet</servlet-name>  	
+  </filter-mapping>
 </web-app>

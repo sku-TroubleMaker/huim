@@ -133,7 +133,7 @@ public class ProductServlet extends HttpServlet {
 		// 물품ID로 검색 후 등록이 되어있다면 내용을 수정
 		Product product = productService.findProduct(productID);
 		if(product != null){
-			productService.removeProduct(product);
+			productService.removeProduct(productID);
 			
 			// RequestDispatcher 객체를 통해 뷰 페이지(selectAllProducts.jsp)로 요청을 전달한다.
 			RequestDispatcher dispatcher = request.getRequestDispatcher("selectAllProducts.jsp");

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/mall">
+	<Resource
+         name="jdbc/huimMallDB"
+         type="javax.sql.DataSource"
+         url="jdbc:oracle:thin:@localhost:1521:xe"
+         driverClassName="oracle.jdbc.OracleDriver"
+         username="mall"
+         password="mall"
+         maxActive="10"
+         maxIdle="5"
+         maxWait="5000" />
+</Context>
